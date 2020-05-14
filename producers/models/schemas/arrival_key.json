@@ -1,5 +1,5 @@
 {
-  "namespace": "com.udacity",
+  "namespace": "com.kafkatraindashboard",
   "type": "record",
   "name": "arrival.key",
   "fields": [

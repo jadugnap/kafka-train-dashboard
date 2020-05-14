@@ -1,3 +1,20 @@
 {
-  "TODO": "Complete this Schema! (Make sure to delete this Key/Value Pair!"
+  "namespace": "com.kafkatraindashboard",
+  "type": "record",
+  "name": "arrival.value",
+  "fields": [
+      {"name": "station_id", "type": ["null","int"]},
+      {"name": "train_id", "type": ["null","string"]},
+      {
+        "name": "direction",
+        "type": ["null","string"]
+      },
+      {
+        "name": "line",
+        "type": ["null","string"]
+      },
+      {"name": "train_status", "type": ["null","string"]},
+      {"name": "prev_station_id", "type": ["null","int"]},
+      {"name": "prev_direction", "type": ["null","string"]}
+  ]
 }
