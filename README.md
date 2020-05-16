@@ -12,9 +12,16 @@ Developing steps:
 2. [Define arrival.value schema](https://github.com/jadugnap/KafkaTrainDashboard/commit/d1f52ad1fce37e29776965a726a9eebc6ffb7a6a "link to this commit")
 -- no `enum` type due to [Object of type mappingproxy is not JSON serializable](https://github.com/confluentinc/confluent-kafka-python/issues/610) issue.
 3. [Enable Station to produce message for each arrival event](https://github.com/jadugnap/KafkaTrainDashboard/commit/98c0ffaca1c380fad86f8c36e55869b6adaba7a0 "link to this commit")
--- note the presence multiple station_id(s) for each station_name.
+-- note the presence multiple `station_id`(s) for each `station_name`.
 4. [Define turnstile.value schema](https://github.com/jadugnap/KafkaTrainDashboard/commit/770961e25442a5ac9c8dcfe0b7baca878fe8283a "link to this commit")
 5. [Enable Turnstile to produce message for each rider entrance in each station_name](https://github.com/jadugnap/KafkaTrainDashboard/commit/56be32c9c29ba33634ec516909b539960f13769f "link to this commit")
+
+### Step 2 - Kafka REST Proxy Producer
+
+Developing steps:
+
+1. [Define weather.value schema](https://github.com/jadugnap/KafkaTrainDashboard/commit/9f649edd96097e5363f391de03cbb2c6235435d4 "link to this commit") -- no `union` type for REST Proxy.
+2. [Enable Weather to produce message every minute](https://github.com/jadugnap/KafkaTrainDashboard/commit/4c805dd73536951d13ce9de0e3c32c38c0466776 "link to this commit")
 
 Testing steps:
 
