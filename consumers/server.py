@@ -41,7 +41,7 @@ class MainHandler(tornado.web.RequestHandler):
 
 def run_server():
     """Runs the Tornado Server and begins Kafka consumption"""
-    if topic_check.topic_exists("TURNSTILE_SUMMARY") is False:
+    if topic_check.topic_exists("DASHBOARD_SUMMARY_TURNSTILE") is False:
         logger.fatal(
             "Ensure that the KSQL Command has run successfully before running the web server!"
         )
@@ -79,7 +79,7 @@ def run_server():
             offset_earliest=True,
         ),
         KafkaConsumer(
-            "TURNSTILE_SUMMARY",
+            "DASHBOARD_SUMMARY_TURNSTILE",
             lines.process_message,
             offset_earliest=True,
             is_avro=False,

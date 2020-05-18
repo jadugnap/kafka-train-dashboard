@@ -23,20 +23,28 @@ KSQL_URL = "http://localhost:8088"
 
 KSQL_STATEMENT = """
 CREATE TABLE turnstile (
-    ???
+    station_id INT,
+    station_name VARCHAR,
+    line VARCHAR
 ) WITH (
-    ???
+    KAFKA_TOPIC = 'dashboard.producer.turnstile',
+    VALUE_FORMAT = 'avro',
+    KEY = 'station_id'
 );
 
-CREATE TABLE turnstile_summary
-WITH (???) AS
-    ???
+CREATE TABLE dashboard_summary_turnstile
+WITH (
+    VALUE_FORMAT = 'JSON'
+) AS
+    SELECT station_id, COUNT(station_id) AS count
+    FROM turnstile
+    GROUP BY station_id;
 """
 
 
 def execute_statement():
     """Executes the KSQL statement against the KSQL API"""
-    if topic_check.topic_exists("TURNSTILE_SUMMARY") is True:
+    if topic_check.topic_exists("DASHBOARD_SUMMARY_TURNSTILE") is True:
         return
 
     logging.debug("executing ksql statement...")
