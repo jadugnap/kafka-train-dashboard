@@ -47,3 +47,13 @@ Developing step:
 Testing step:
 
 `cd consumer` -> `faust -A faust_stream worker -l info`
+
+### Step 5 - KSQL Aggregation (Consumer)
+
+Developing step:
+
+[Configure KSQL to aggregate riders entrance count in each station_id](https://github.com/jadugnap/kafka-train-dashboard/commit/63a07f0c920802b04eb3bdbf6cef38f12422e41e "link to this commit")
+
+Testing step:
+
+`cd consumer` -> `python ksql.py`
