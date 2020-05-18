@@ -38,7 +38,7 @@ class Weather(Producer):
         # TODO: Complete the below by deciding on a topic name, number of partitions, and number of
         # replicas
         super().__init__(
-            topic_name="weather.hourly.event", # TODO: Come up with a better topic name
+            topic_name="dashboard.producer.weather", # TODO: Come up with a better topic name
             key_schema=Weather.key_schema,
             value_schema=Weather.value_schema,
             num_partitions=1,

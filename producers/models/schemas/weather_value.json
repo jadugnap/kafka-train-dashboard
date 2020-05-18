@@ -1,5 +1,5 @@
 {
-  "namespace": "com.kafkatraindashboard",
+  "namespace": "com.dashboard",
   "type": "record",
   "name": "weather.value",
   "fields": [
