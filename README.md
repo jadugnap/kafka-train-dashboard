@@ -27,3 +27,13 @@ Testing steps:
 
 1. To produce -> `cd producer` -> `python simulation.py`
 2. To consume -> `kafka-avro-console-consumer --bootstrap-server PLAINTEXT://localhost:9092 --whitelist ".*event"`
+
+### Step 3 - Kafka Connect Source (Producer)
+
+Developing step:
+
+[Configure jdbc source kafka connector](https://github.com/jadugnap/kafka-train-dashboard/commit/0d80214f993ced3892348f7556531dd8f6ee639d "link to this commit")
+
+Testing step:
+
+`cd producer` -> `python connectors.py`
