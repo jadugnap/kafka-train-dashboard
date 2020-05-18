@@ -33,6 +33,12 @@ class Station:
     def handle_arrival(self, direction, train_id, train_status):
         """Unpacks arrival data"""
         status_dict = {"train_id": train_id, "status": train_status.replace("_", " ")}
+        # logger.info('''
+        #     Direction [{}]
+        #     Train_Id [{}]
+        #     Train_Status [{}]
+        #     message consumed.
+        #     '''.format(direction, train_id, train_status))
         if direction == "a":
             self.dir_a = status_dict
         else:
@@ -41,3 +47,8 @@ class Station:
     def process_message(self, json_data):
         """Handles arrival and turnstile messages"""
         self.num_turnstile_entries = json_data["COUNT"]
+        # logger.info('''
+        #     Station [{}]
+        #     Num_Turnstile_Entries [{}]
+        #     message consumed.
+        #     '''.format(json_data["STATION_ID"], json_data["COUNT"]))
