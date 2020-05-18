@@ -37,3 +37,13 @@ Developing step:
 Testing step:
 
 `cd producer` -> `python connectors.py`
+
+### Step 4 - Faust Stream Sink (Consumer)
+
+Developing step:
+
+[Configure Faust Stream to transform_station](https://github.com/jadugnap/kafka-train-dashboard/commit/50ee5f1c115e83a05fba31da2428d92f4664ff8b "link to this commit")
+
+Testing step:
+
+`cd consumer` -> `faust -A faust_stream worker -l info`
