@@ -7,7 +7,9 @@ from confluent_kafka.avro import AvroConsumer
 from confluent_kafka.avro.serializer import SerializerError
 from tornado import gen
 
-from producers.models.producer import BOOTSTRAP_SERVER, SCHEMA_REGISTRY
+# from producers.models.producer import BOOTSTRAP_SERVER, SCHEMA_REGISTRY
+BOOTSTRAP_SERVER = "PLAINTEXT://localhost:9092"
+SCHEMA_REGISTRY = "http://localhost:8081"
 
 logger = logging.getLogger(__name__)
 
